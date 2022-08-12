@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+
+        }
+        /* .box1::before{
+            content: '';
+            display: table;            
+        } */
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin-top: 100px;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: #c5c5;
+            float: right;
+        }
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: #3e3e;
+        }
+        /*  
+            clearfix 可以同时解决高度塌陷和外边距重叠的问题
+                clearfix 用来解决高度塌陷时，
+                clearfix 用来解决外边距重叠时，添加至要消除影响的那个元素
+
+        */
+
+        .clearfix::before,
+        .clearfix::after{ 
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 clearfix">
+        <!-- box1 和 box2 隔开 -->
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>

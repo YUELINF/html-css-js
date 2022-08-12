@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            选择器的权重：  
+                内联样式        1,0,0,0
+                id选择器        0,1,0,0
+                类和伪类选择器   0,0,1,0
+                元素选择器       0,0,0,1
+                通配选择器       0,0,0,0
+                继承的样式       没有优先级
+
+
+            比较优先级：
+                需要将所有的选择器的优先级进行相加计算，最后优先级越高，则越优先显示（分组选择器是单独计算的）
+                如果优先级计算后相同，则从上到下执行
+
+            !important获取最高优先级
+         */
+         a:link{
+            color: red;
+         }
+         a:visited{
+            color: orange;
+         }
+         a:hover{
+            color: aqua;
+            font-size: 50px;
+         }
+         
+         a:active{
+            color: yellowgreen;
+         }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com" >this is a </a>
+    <a href="#">hhh</a>
+</body>
+</html>

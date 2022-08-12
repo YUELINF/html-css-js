@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            //定义一个变量，来表示移动的速度
+            var speed = 20;
+            //创建一个变量表示方向
+            var dir = null;
+            //开启一个定时器，控制div的移动
+            setInterval(function(){
+                if(dir == "ArrowUp"){
+                    box1.style.top = box1.offsetTop - speed + 'px';
+                }
+                else if(dir == "ArrowDown"){
+                    box1.style.top = box1.offsetTop + speed +'px';
+                }
+                else if(dir == "ArrowLeft"){
+                    box1.style.left = box1.offsetLeft - speed + 'px';
+                }
+                else if(dir == "ArrowRight"){
+                    box1.style.left = box1.offsetLeft + speed + 'px';
+                }
+            },30);
+            var box1 = document.getElementById("box1");
+            /* 
+                按左键，div左移     ArrowLeft
+                按右键，div右移     ArrowRight
+                按上键，div上移     ArrowUp
+                按下键，div下移     ArrowDown
+            */
+            document.onkeydown = function(event){
+                event = event || window.event;
+                if(event.ctrlKey){
+                    speed = 100;
+                }else{
+                    speed = 10;
+                }
+                //使dir等于按键的值
+                dir = event.code;
+            };
+            document.onkeyup = function(){
+                //设置方向为0
+                dir = 0;
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>

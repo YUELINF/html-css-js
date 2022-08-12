@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            创建一个函数，用来计算三个数的和
+            
+            可以使用return来设置函数的返回值
+            语法：
+                return 值
+            return后面的值将会作为函数的执行结果返回
+            
+            如果return语句后不跟任何值就相当于返回一个undefined，
+            如果函数中不写return，则也会返回undefined
+
+            return 后可以跟任意类型的值
+        */
+       function sum(a,b,c){
+        alert(a+b+c);
+        // let d = a+b+c;
+        // return d;
+       }
+       //调用函数
+    //    let result = sum(4,5,6);
+    //    console.log(result);
+
+       /* 
+        返回值可以是任意的数据类型
+            也可以是一个对象
+       */
+      function fun2(){
+        return {name:"sha"};
+      }
+      console.log("a = " + fun2().name)
+
+      function fu2(){
+        // 在函数内部再声明一个函数
+        function a(){
+             return console.log("I am in fu2");
+        };
+        // 将a函数对象作为返回值返回
+        // return a;
+        // return a();
+        /* 
+            返回函数的执行结果 相当于 return aa();
+            return function aa(){
+            console.log("I am aa in fu2");
+        } */
+      }
+
+      let b = fu2(); 
+      b();
+    //   同等写法 fu2()();
+    //   console.log("fu2 = " + b());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

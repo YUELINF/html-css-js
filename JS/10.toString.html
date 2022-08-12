@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(){
+
+        }
+        var per = new Person();
+        var result = per.toString();
+        // console.log(per.__proto__.__proto__.hasOwnProperty("toString"));
+
+        // 当我们在页面中打印一个对象时，事实上是输出对象的 toString()方法的返回值
+        /* per.toString = function(){
+            return "我是一个快乐的小Person";
+        }
+        console.log(per); */
+
+        //修改Person原型的toString
+        Person.prototype.toString = function(){
+            return "Person";
+        };
+        var per2 = new Person();
+        console.log(per2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

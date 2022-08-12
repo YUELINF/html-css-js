@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米官网</title>
+    <link rel="stylesheet" href="../layout/css样式重置/reset.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <style>
+        body {
+            font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+            font-style: normal;
+            font-variant-ligatures: normal;
+            font-variant-caps: normal;
+            font-variant-numeric: normal;
+            font-variant-east-asian: normal;
+            font-weight: normal;
+            font-stretch: normal;
+            font-size: 14px;
+            line-height: 1.5;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+            color: #333;
+            background-color: #fff;
+            min-width: 1226px;
+        }
+        /* 处理高度塌陷 */
+        .clearfix::before,
+        .clearfix::after{ 
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* 导航栏 */
+        .site-topbar{
+            font-size: 12px;
+            background-color: #333333;
+        }
+        .mi .container{
+            width: 1226px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .left a{
+            text-decoration: none;
+            color: #b0b0b0;
+            line-height: 40px;
+            float: left;
+        }
+        /* 小竖线 */
+        .line{
+            float: left;
+            margin: 0 3.6px;
+            line-height: 40px;
+            font-family: sans-serif;
+            color: #424242;
+        }
+
+                /* 购物车图标 */
+        .topbar-cart{
+            position: relative;
+            line-height: 40px;
+            width: 120px;
+            height: 40px;
+            margin-left: 15px;
+            background-color: #424242;
+            text-align: center;
+            float: right;
+            /* overflow: hidden; */
+        }
+        .topbar-cart a{
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+        .topbar-cart .car::before{
+            content: '\f07a';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+
+        }
+        .container .topbar-menu{
+            width: 316px;
+            height: 80px;
+            background-color: #fff;
+            position: absolute;
+            top: 40px;
+            right: 0px;
+            box-shadow: 0 2px 10px rgb(0 0 0 / 15%);
+            z-index: 999;
+            display: none;
+        }
+        .topbar-menu span{
+            line-height: 80px;
+        }
+
+        /* 下拉框 */
+        .topbar-cart:hover .topbar-menu{
+            display: block;
+        }
+        .topbar-cart:hover a{
+            color: #FF6700;
+            background-color: #fff;
+            display: block;
+        }
+
+        .right{
+            float: right;
+        }
+        .right a{
+            text-decoration: none;
+            color: #b0b0b0;
+            line-height: 40px;
+            float: left;
+        }
+
+        .left a:hover{      /* 优先级：继承选择<标签选择器<类选择器<id选择器=伪类选择器<行内样式 */
+            color: #fff;
+        }
+        .right a:hover{
+            color: #fff;
+        }
+
+        /* site-head */
+        .container2{
+            width: 1226px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        .head-logo{
+            float: left;
+            width: 62px;
+            margin-top: 22px;
+        }
+        .img{
+            width: 56px;
+            height: 56px;
+            background-image: url(https://s02.mifile.cn/assets/static/image/logo-mi2.png);
+            background-size: 56px;
+        }
+        .head-list{
+            float: left;
+            position: absolute;
+            top: 12px;
+            left: 237px;
+        }
+        .head-list li{
+            float: left;
+        }
+        .head-list a{
+            float: left;
+            line-height: 88px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #333333;
+            margin-right:19px;
+            display: block;
+        }
+        .head-list a:hover {
+            color: #FF6700;
+        }
+
+        .box{
+            position: absolute;
+            top: 140px;
+            left: 0;
+            width: 100%;
+            height: 229px;
+            border-top: 1px solid #e0e0e0;
+            z-index: 999;
+            display: none;
+        }
+        .box img{
+            margin: 0 auto 16px;
+            text-align: center;
+        }
+        .list-one , .list-two , .list-three , .list-four , .list-five , .list-six{
+            position: relative;
+            float: left;
+            left: 184px;
+            width: 180px;
+            padding: 35px 12px 0;
+            text-align: center;
+        }
+        .list-two::before , .list-three::before , .list-four::before , .list-five::before , .list-six::before{
+            position: absolute;
+            left: 0;
+            top: 35px;
+            z-index: 1;
+            width: 1px;
+            height: 100px;
+            content: "";
+            background-color: #e0e0e0;
+        }
+        .box a{
+            text-decoration: none;
+            color: #333333;
+        }
+        .box a .title{
+            margin: 0;
+            line-height: 20px;
+            text-align: center;
+        }
+        .box a .price{
+            color: #FF6700;
+            line-height: 20px;
+            margin: 0;
+            text-align: center;
+        }
+        .head-search{
+            float: right;
+            position: absolute;
+            top: 32px;
+            right: 0px;
+        }
+        .head-search:hover .search-text , .head-search:hover button{
+            border-color: #b2b2b2;
+        }
+        .head-search input{
+            outline: none;
+            position: relative;
+            right: -4px;
+            width: 223px;
+            height: 48px;
+            line-height: 48px;
+            border: solid 1px #e0e0e0;
+            border-right: none;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+        .head-search button{
+            width: 52px;
+            height: 50px;
+            background-color: #fff;
+            border: solid 1px #e0e0e0;
+        }
+        
+        .swiper-slide{
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+        }
+        .r-bar{
+            position: absolute;
+            top: 140px;
+            left: 149px;
+            z-index: 21;
+            width: 234px;
+            height: 460px;
+            font-size: 14px;
+        }
+        .r-bar ul{
+            height: 420px;
+            border: 0;
+            background:#3f3d3e;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .r-bar li{
+            position: relative;
+            display: block;
+            padding-left: 30px;
+            height: 42px;
+        }
+        .r-bar a{
+            line-height: 42px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .r-bar li{
+            position: relative;
+        }
+        .r-bar em{
+            position: absolute;
+            right: 28px;
+            line-height: 42px;
+        }
+        .r-bar a:hover li{
+            background-color: #FF6700;
+        }
+    </style>
+</head>
+<body>
+    <div class="mi">
+        <div class="site-topbar clearfix">
+                <div class="container">
+                    <ul class="left">
+                        <a href="javascript:;"><li>小米官网</li></a>
+                        <li class="line">|</li>
+    
+                        <a href="javascript:;"><li>小米商城</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>MIUI</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>IoT</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>云服务</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>天星数科</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>有品</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>小爱开发平台</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>企业团购</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>资质证照</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>协议规则</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>下载app</li></a>
+                        <li class="line">|</li>
+                        
+                        <a href="javascript:;"><li>Select Location</li></a>
+                    </ul>
+                    <div class="topbar-cart">
+                        <div class="cart-mini">
+                            <a href="javascript:;">
+                                <span class="car">购物车</span>
+                                <span>（0）</span>
+                            </a>
+                        </div>
+                        <div class="topbar-menu">
+                            <span>购物车中还没有商品，赶紧选购吧！</span>
+                        </div>
+                    </div>
+                    <ul class="right">
+                        <a href="javascript:;"><li>登录</li></a>
+                        <li class="line">|</li>
+                        <a href="javascript:;"><li>注册</li></a>
+                        <li class="line">|</li>
+                        <a href="javascript:;"><li>消息通知</li></a>
+                    </ul>
+    
+                </div>
+        </div>
+        <div class="site-head clearfix">
+                <div class="container2">
+                    <div class="head-logo">
+                        <a href="javascript:;" class="logo">
+                            <div class="img"></div>
+                        </a>
+                    </div>
+                    <div class="head-list">
+                        <ul>
+                            <li ><a href="javascript:;">Xiaomi手机</a></li>
+                            <li><a href="javascript:;">Redmi手机</a></li>
+                            <li><a href="javascript:;">电视</a></li>
+                            <li><a href="javascript:;">笔记本</a></li>
+                            <li><a href="javascript:;">平板</a></li>
+                            <li><a href="javascript:;">家电</a></li>
+                            <li><a href="javascript:;">路由器</a></li>
+                            <li><a href="javascript:;">服务中心</a></li>
+                            <li><a href="javascript:;">社区</a></li>
+                        </ul>
+                    </div>
+                    <div class="head-search">
+                        <input type="text" value="洗衣机" class="search-text" id="input-text">
+                        <button class="fas" id="bt">&#xf002;</button>
+                    </div>
+                    
+                </div>
+                <div class="box clearfix">
+                    <div class="list-one">
+                        <a href="javascript:;">
+                            <div class="img_1">
+                                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7a15df55e98e4163390096ed05b1ef5.png?thumb=1&w=200&h=138&f=webp&q=90" alt="Xiaomi 12S Ultra" width="160" height="110">
+                            </div>
+                            <div class="title">Xiaomi 12S Ultra</div>
+                            <p class="price">5999元起</p>
+                        </a>
+                    </div>
+                    <div class="list-two">
+                        <a href="javascript:;">
+                            <div class="img_2">
+                                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/b01bb7ee0f8c9865c11eeb2c483015e2.png?thumb=1&w=200&h=138&f=webp&q=90" alt="Xiaomi 12S pro" width="160" height="110">
+                            </div>
+                            <div class="title">Xiaomi 12S pro</div>
+                            <p class="price">4699元起</p>
+                        </a>
+                    </div>
+                    <div class="list-three">
+                            <a href="javascript:;">
+                                <div class="img_3">
+                                    <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/e1f5a30b6e9e29c7f4ad6ed26023f4de.png?thumb=1&w=200&h=138&f=webp&q=90" alt="Xiaomi 12S" width="160" height="110">
+                                </div>
+                                <div class="title">Xiaomi 12S</div>
+                                <p class="price">3999元起</p>
+                            </a>
+                    </div>
+                    <div class="list-four">
+                        <a href="javascript:;">
+                            <div class="img_4">
+                                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/a811f07a4e13510b23ada8e2eca473ae.png?thumb=1&w=200&h=138&f=webp&q=90" alt="Xiaomi 12 Pro 天玑版" width="160" height="110">
+                            </div>
+                            <div class="title">Xiaomi 12 Pro 天玑版</div>
+                            <p class="price">3999元起</p>
+                        </a>
+                    </div>
+                    <div class="list-five">
+                        <a href="javascript:;">
+                            <div class="img_5">
+                                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/88ae9b85c5f8fbdae2ea98d58a045e1e.png?thumb=1&w=200&h=138&f=webp&q=90" alt="Xiaomi Civi 1S" width="160" height="110">
+                            </div>
+                            <div class="title">Xiaomi Civi 1S</div>
+                            <p class="price">2299元起</p>
+                        </a>
+                    </div>
+                    <div class="list-six">
+                        <a href="javascript:;">
+                            <div class="img_6">
+                                <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/02ac31f8d3848f71617e074e8e50879e.png?thumb=1&w=200&h=138&f=webp&q=90" alt="Xiaomi 12 Pro" width="160" height="110">
+                            </div>
+                            <div class="title">Xiaomi 12 Pro</div>
+                            <p class="price">4699元起</p>
+                        </a>
+                    </div>
+                </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="r-bar">
+                <ul>
+                    <a href="javascript:;">
+                        <li>
+                            <span>手机</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+                        </li>
+                    </a>
+                    <a href="javascript:;">
+                        <li>
+                            <span>电视</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+                        </li>
+                    </a>
+                    <a href="javascript:;">
+                        <li>
+                            <span>笔记本&nbsp;平板</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+                        </li>
+                    </a>
+                    <a href="javascript:;">
+                        <li>
+                            <span>出行&nbsp;穿戴</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+                        </li>
+                    </a>
+                    <a href="javascript:;">
+                        <li>
+                            <span>耳机&nbsp;音箱</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+                        </li>
+                    </a>
+                    <a href="javascript:;">
+                        <li>
+                            <span>家电</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+                        </li>
+                    </a>
+                    <a href="javascript:;">
+                        <li>
+                            <span>智能&nbsp;路由器</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+                        </li>
+                    </a>
+                    <a href="javascript:;">
+                        <li>
+                            <span>电源&nbsp;配件</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+                        </li>
+                    </a>
+                    <a href="javascript:;">
+                        <li>
+                            <span>健康&nbsp;儿童</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+
+                        </li>
+                    </a>
+                    <a href="javascript:;">
+                        <li>
+                            <span>生活&nbsp;箱包</span>
+                            <em class="fas" style="color: #fff;">&#xf105;</em>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+            <img alt src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/36b45c624f42fa81732457e3f9773dbd.jpg?thumb=1&w=1533&h=575&f=webp&q=90" width="1226px" height="460px" style="position: absolute;top: 140px;
+            left: 149px;">
+        </div>
+        <div class="span1"></div>
+        <div class="span2"></div>
+        <div class="span3"></div>
+        <div class="span4"></div>
+    </div>
+</body>
+</html>

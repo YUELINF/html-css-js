@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            btn01.onclick = function(){
+                //查找#bj节点
+                alert(bj.innerHTML);
+            };
+
+            btn02.onclick = function(){
+                //查找所有li节点
+                var lis = document.getElementsByTagName("li");
+                for(var i = 0; i < lis.length; i++){
+                    console.log(lis[i].innerHTML);
+                }
+            };
+
+            btn03.onclick = function(){
+                //查找name=gender的所有节点
+                var ng = document.getElementsByName("gender");
+                /* 
+                    如果需要读取元素节点属性，
+                      直接使用   元素.属性名
+                        例子： 元素.id  元素.name  元素.value
+                        注意：class属性不能采取这种方式
+                            读取class属性需要使用 元素.className
+                */
+                console.log(ng[0].value);
+            };
+        }
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>
+                你喜欢哪个城市？
+            </p>
+
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+
+            <br>
+            <br>
+
+            <p>你喜欢哪款单机游戏？</p>
+            <ul id="game">
+                <li id="rl">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+
+            <br>
+            <br>
+
+            <p>你的手机的操作系统是？</p>
+            <ul id="phone"><li>IOS</li><li id="android">Android</li><li>Windows Phone</li></ul>
+        </div>
+    <div class="inner">
+        gender:
+        <input type="radio" name="gender" value="male">
+        Male
+        <input type="radio" name="gender" value="female">
+        Female
+        <br>
+        <br>
+        name:
+        <input type="text" name="name" id="username" value="abcde">
+    </div>
+    <div id="btnList">
+        <button id="btn01">查找#bj节点</button>
+        <button id="btn02">查找所有li节点</button>
+        <button id="btn03">查找name=gender的所有节点</button>
+        <button id="btn04">查找#city下所有li节点</button>
+        <button id="btn05">返回#city的所有子节点</button>
+        <button id="btn06">返回#phone的第一个子节点</button>
+        <button id="btn07">查找#bj的父节点</button>
+        <button id="btn08">返回#android的前一个兄弟节点</button>
+        <button id="btn09">返回#username的value属性</button>
+        <button id="btn10">设置#username的value属性</button>
+        <button id="btn11">返回#bj的文本值</button>
+    </div>
+</body>
+</html>

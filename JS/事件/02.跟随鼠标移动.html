@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            height: 1000px;
+        } */
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 
+                开启绝对定位
+            */
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            /* 
+                使div可以跟随鼠标移动
+            */
+            //获取box1
+            var box1 = document.getElementById("box1");
+            // 绑定鼠标移动事件
+            document.onmousemove = function(event){
+                event = event || window.event;
+                
+                
+
+                //div的偏移量，是相对整个页面的
+                var left = event.pageX;
+                var top = event.pageY;
+
+                //设置div的偏移量
+                box1.style.left = left + "px";
+                box1.style.top = top + "px";
+
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+                text-align 文本的水平对齐：
+                    可选值：
+                        left 左对齐
+                        right 右对齐
+                        center 居中对齐
+                        justify 两端对齐
+                
+                vertical-align 设置元素垂直对齐
+                    可选值：
+                        baseline 默认值，基线对齐
+                        top      顶部对齐
+                        bottom   底部对齐
+                        middle   居中对齐
+
+                
+                        

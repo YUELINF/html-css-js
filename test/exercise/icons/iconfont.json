@@ -1,0 +1,30 @@
+{
+  "id": "3534901",
+  "name": "icon",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "551844",
+      "name": "竖线",
+      "font_class": "vertical_line",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "494424",
+      "name": "locate_1f",
+      "font_class": "locate1f",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "7738181",
+      "name": "三角形",
+      "font_class": "sanjiaoxing",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    }
+  ]
+}

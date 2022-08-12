@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            函数的实参可以是任意值
+                - 对象
+                - 函数
+        */
+
+        function a(n){
+            return n%2 == 0;
+        }
+        console.log(a(5));
+
+        function fun(r){
+            return 3.14 * r * r;
+        }
+        console.log(fun(5))
+        /* 
+            mianji()
+                - 调用函数，相当于使用函数的返回值
+            mianji
+                - 相当于直接使用函数对象
+        */
+
+        function person(Obj){
+            console.log("我是"+Obj.name+",今年我"+Obj.age+"岁了,"+"我是一个"+Obj.gender+"人,"+"我来自"+Obj.address);
+        }
+        let obj = {
+            name:"sun",
+            age:18,
+            gender:"nan",
+            address:"huaguoshan"
+        };
+        person(obj);
+
+        function fun2(b){
+            console.log("a = " + b);
+            b(obj);
+        }
+        fun2(person);
+
+        /* 
+            fun2(a);
+                - 函数对象
+                - 相当于直接使用函数对象
+            fun2(a());
+                - 调用函数
+                - 相当于使用的函数的返回值
+
+        */
+
+        /* fun(function(){
+            
+        }); */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

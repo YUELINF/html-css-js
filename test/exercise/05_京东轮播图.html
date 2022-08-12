@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="../layout/css样式重置/reset.css">
+    <style>
+        .img-list{
+            width: 590px;
+            height: 470px;
+            position: relative;
+            margin: auto;
+            top: 50px;
+            left: 50px
+        }
+        .img-list li{
+            position: absolute;
+        }
+        .img-list img{
+            width: 590px;
+            height: 470px;
+        }
+        .img-list li:nth-child(4){
+            z-index: 1;
+        }
+
+        .pointer{
+            position: absolute;
+            z-index: 999;
+            bottom: 20px;
+            left: 30px;
+        }
+        .pointer a{
+            width: 8px;
+            height: 8px;
+            margin-right: 4px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, .8);
+            float:left;
+            background-clip: content-box;
+            border: 3px solid transparent;
+
+        }
+        .pointer a:hover{
+            background-color: #fff;
+            border: 3px solid rgba(255, 255, 255, .3);
+        }
+    </style>
+</head>
+<body>
+    <ul class="img-list">
+        <li><a href="javascript:;"><img src="https://img14.360buyimg.com/pop/s1180x940_jfs/t1/206177/25/24862/66083/62c2436eE67eb0410/af472366c283dfc8.jpg.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="https://img10.360buyimg.com/pop/s1180x940_jfs/t1/177793/35/15520/42018/60fa8d19Ec5cc0d87/f6e2f46a145e3a97.jpg.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="https://img20.360buyimg.com/pop/s1180x940_jfs/t1/113379/1/26355/56966/62a9a321E56578405/8f4fb6246f06deab.jpg.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="https://imgcps.jd.com/ling4/100008348542/5Lqs6YCJ5aW96LSn/5L2g5YC85b6X5oul5pyJ/p-5f3a47329785549f6bc7a6f3/8b23b13d/cr/s/q.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="https://img14.360buyimg.com/pop/s1180x940_jfs/t1/200163/10/26295/48984/62d15c7bE9522cc66/2dfeb46df36a7224.jpg.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="https://imgcps.jd.com/ling4/100025520132/5Lqs6YCJ5aW96LSn/5L2g5YC85b6X5oul5pyJ/p-5f3a47329785549f6bc7a6f3/e060fd6c/cr/s/q.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="https://imgcps.jd.com/ling4/100013964134/5Lqs6YCJ5aW96LSn/5L2g5YC85b6X5oul5pyJ/p-5f3a47329785549f6bc7a6e3/b52941f1/cr/s/q.jpg" alt=""></a></li>
+        <li><a href="javascript:;"><img src="https://imgcps.jd.com/ling4/100038849174/5Lqs6YCJ5aW96LSn/5L2g5YC85b6X5oul5pyJ/p-5f3a47329785549f6bc7a6e7/43e7aa54/cr/s/q.jpg" alt=""></a></li>
+
+        <div class="pointer">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+</body>
+</html>

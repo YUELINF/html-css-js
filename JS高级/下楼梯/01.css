@@ -1,0 +1,27 @@
+html{
+    height: auto;
+    background-color: #fff;
+}
+
+body{
+    margin: 0 auto;
+    width: 1000px;
+    height: 753px;
+    background-color: #434343;
+}
+
+.floor{
+    display: flex;
+    position: relative;
+    top: 733px;
+}
+.box1{
+    height: 20px;
+    background-color: red;
+    margin-left: 100px;
+    flex-grow: 1;
+}
+.box1:nth-last-child(1){
+    margin-right: 100px;
+}
+

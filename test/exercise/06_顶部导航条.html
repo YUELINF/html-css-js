@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顶部导航条</title>
+    <link rel="stylesheet" href="./icons/iconfont.css">
+    <link rel="stylesheet" href="../layout/css样式重置/reset.css">
+    <style>
+        /* 背景 */
+        .top-list{
+            height: 30px;
+            background-color: #E3E4E5;
+        }
+        /* 调整 导航条 */
+        .center{
+            line-height: 30px;
+            font-size: 12px;
+            width: 1190px;
+            margin: 0 auto;
+            position: relative;
+        }
+        /* 调整 内容布局 */
+        .top-list li{
+            float: left;
+        }
+        .right{
+            float: right;
+            /* right: 0px; */
+            /* left: 155px; */
+        }
+        /* 调整 重庆 的样式 */
+        .locate a{
+            text-decoration: none;
+            padding: 0 7px;
+            color:#999999;
+        }
+        .locate .iconfont{
+            font-size: 17.5px;
+            color: #F10215;
+        }
+
+        /* 调整 right 的布局 */
+        .login_register{
+            margin-right: 8px;
+        }
+        .login{
+            text-decoration: none;
+            color: #999999;
+        }
+        .register{
+            text-decoration: none;
+            color: #F10215;
+        }
+        .right .iconfont{
+            font-size: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-list">
+        <div class="center">
+            <ul class="left">
+                <li class="locate">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xe643;</i>
+                        <span>重庆</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="right">
+                <li class="login_register">
+                    <a href="javascript:;" class="login">
+                        <span>你好，请登录</span>
+                    </a>
+                    &nbsp;&nbsp;
+                    <a href="javascript:;" class="register">
+                        <span>免费注册</span>
+                    </a>
+                    <i class="iconfont">&#xe63a;</i>
+                </li>
+                <li class="order">
+                    <span>我的订单</span>
+                    <i class="iconfont">&#xe63a;</i>
+
+                </li>
+                <li class="jd">
+                    <span>我的京东</span>
+                    <i class="iconfont">&#xe609;</i>
+                    <i class="iconfont">&#xe63a;</i>
+                </li>
+                <li class="member">
+                    <span>京东会员</span>
+                    <i class="iconfont">&#xe63a;</i>
+                </li>
+                <li class="enterprise">
+                    <span>企业采购</span>
+                    <i class="iconfont">&#xe609;</i>
+                    <i class="iconfont">&#xe63a;</i>
+                </li>
+                <li class="serve">
+                    <span>客户服务</span>
+                    <i class="iconfont">&#xe609;</i>
+                    <i class="iconfont">&#xe63a;</i>
+                </li>
+                <li class="navigation">
+                    <span>网站导航</span>
+                    <i class="iconfont">&#xe609;</i>
+                    <i class="iconfont">&#xe63a;</i>
+                </li>
+                <li class="phone">
+                    <span>手机京东</span>
+                    <i class="iconfont">&#xe63a;</i>
+                </li>
+                <li class="blind">
+                    <span>网站无障碍</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

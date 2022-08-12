@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数组 （Array）
+                - 数组也是一个对象
+                - 它和我们普通对象功能类似
+                - 不同的是普通对象是使用字符串作为属性名，
+                    而数组是使用数字来作为索引操作元素
+                - 索引：
+                    从0开始的整数就是索引
+                -数组 的存储性能比普通对象要好，在开发中我们经常使用数组来存储一些数据
+        */
+
+        var arr = new Array();
+
+        console.log( typeof arr);
+        
+        /* 
+            向数组中添加元素
+            语法： 数组[索引] = 值
+            如果读取不存在的索引，他不会报错而是返回undefined
+        */
+       arr[0] = 10;
+       console.log(arr.length);
+       arr[1] = 11;
+       console.log(arr.length);
+       arr[arr.length] = 13;
+       console.log(arr);
+       /* 
+        获取数组的长度
+        语法：数组.length
+
+        length可修改
+
+        arr[arr.length] = 90; 向数组的最后一个元素添加元素
+       */
+      console.log(arr.length);
+      console.log(arr);
+
+      /* 
+        数组的四个方法：
+            push()
+                - 向数组最后一个元素后面添加元素，并返回元素个数
+            pop()
+                - 删除数组最后一个元素，并返回被删除的元素
+            unshift()
+                - 向数组第一个元素前添加元素，并返回元素个数
+            shift()
+                - 删除数组第一个元素，并返回被删除的元素
+      */
+     let arr2 = ["sun","zhu","sha"];
+     let re = arr2.unshift("zzz");
+     console.log("re = " + re);
+     console.log(arr2)
+
+     /* 
+        数组的遍历不仅能用 for 循环，还能使用
+            forEach(function(a,b,c){
+
+            });
+                - 括号内放函数对象
+                - a是正在遍历的元素
+                - b是该元素索引
+                - c是该数组    
+     */
+
+     //找出数组中age大于18的人，并输出
+     arr[0] = {
+        name:"shun",
+        age:18
+     };
+     arr[1] = {
+        name:"zhu",
+        age:8
+     };
+     arr[2] = {
+        name:"sha",
+        age:39
+     };
+    /* arr.forEach(function(obj, num, arr){
+        if(arr[num].age >= 18){
+            console.log(obj);
+        }
+    });
+ */
+    /* 
+        slice()
+         - 可以用来从数组提取指定元素
+         - 参数：
+            1. 截取开始发位置的索引，包含开始索引
+            2. 截取结束的位置的索引，不包含结束索引
+                - 第二个参数可以省略不写，此时截取往后所有元素
+            3. 索引可以传递一个负值
+                负值表示从后往前计算
+                    -1是倒数第一个
+
+        splice()
+         - 删除数组中的指定元素
+         - 使用splice()会影响到原数组，会将指定元素从原数组中删除
+            并将被删除的元素作为返回值返回
+
+        - 参数：
+            第一个，表示开始的索引
+            第二个，表示删除的数量
+            第三个及以后
+            可以传递一些新的元素，这些元素会自动插入开始位置索引前边
+    */
+   arr = ["zhu","sun","sha"];
+   arr.slice(0,2);
+   var re2 = arr.slice(0,2);
+   console.log("re2 = " + re2);
+
+   //去重
+   arr = [1,2,3,2,1,3,2,2,4,2,5];
+   for(var i = 0; i < arr.length; i++){
+        for(var j = i + 1; j < arr.length; j++){
+            if(arr[i] == arr[j]){
+                arr.splice(j,1);
+                
+                j--; // 关键一步
+            }
+        }
+    }
+    console.log(arr);
+
+    /* 
+        concat() 可以连接两个或多个数组，并将新的数组返回
+            - 该方法不会对原数组产生影响
+            - 语法:
+                arr.concat(arr2,arr3,"XXX","XXX");
+    */
+
+    /* 
+        join()
+            - 该方法可以将数组转换为一个字符串
+            - 括号里指定连接符，默认为 ，
+    */
+    /* 
+        reverse()
+            - 该方法用来反转数组
+            - 修改原数组
+
+        sort()
+         - 可以用来对数组中的元素进行排序，影响原数组
+         - 默认按照Unicode编码进行排序
+         - 即使对数字排序时，也会按照Unicode编码来排序，可能出现问题
+
+         - 我们可以自己自定义回调函数来指定排序规则
+                回调函数需要两个形参，a在前，b在后
+                如果返回值大于0，交换位置
+                如果返回值小于0，位置不变
+                返回0，认为相等，位置不变
+     */
+    arr.sort(function(a,b){
+        return b-a;
+        //return a-b; 降序
+    });
+    console.log(arr);
+    // console.log(arr.reverse());
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

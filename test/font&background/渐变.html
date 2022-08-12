@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            /* background-color:#bfa; */
+            /* 
+                通过渐变可以设置一些复杂的背景颜色，可以实现一个从颜色向其他颜色过滤的效果
+                ！！渐变是图片，需要通过 background-image 来设置
+
+                线性渐变，颜色沿着一条直线发送变化
+                    linear-gradient()
+
+                    linear=gradient(red,yellow) 红色在开头，黄色在结尾，中间是过度区域
+                    - 线性渐变的开头，我们可以指定一个渐变方向
+                        to ledt
+                        to right
+                        to bottom
+                        to top
+                        xxxdeg deg表示度数 转
+                        turn 表示圈
+            */
+            /* background-image: linear-gradient(to right,red 30px,yellow 100px); */
+            /* 
+                repeating-linear-gradient() 可以平铺的线性渐变
+            */
+            background-image: repeating-linear-gradient(red,yellow 100px);
+            /* background-repeat: no-repeat; 不起作用了 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
